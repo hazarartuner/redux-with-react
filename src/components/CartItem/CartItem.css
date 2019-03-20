@@ -1,0 +1,36 @@
+.CartItem {
+  display: grid;
+  grid-template-areas: 'image name button' 'image price button';
+  grid-template-columns: 60px 1fr auto;
+  grid-column-gap: 1rem;
+  margin-bottom: 1.5rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.CartItem img {
+  grid-area: image;
+  max-width: 100%;
+}
+
+.CartItem p {
+  grid-area: name;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding-top: 1rem;
+}
+
+.CartItem span {
+  grid-area: price;
+  padding-bottom: 1rem;
+}
+
+.CartItem button {
+  grid-area: button;
+  background: #f60000;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}

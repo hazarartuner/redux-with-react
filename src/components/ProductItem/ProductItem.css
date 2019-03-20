@@ -1,0 +1,54 @@
+.ProductItem {
+  display: grid;
+  grid-template-columns: 10rem 1fr auto;
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 0.5rem 1.5rem;
+  grid-template-areas: 'image name price' 'image description description' 'image . button';
+}
+
+.ProductItem + .ProductItem {
+  border-top: solid 1px #ddd;
+  padding-top: 2rem;
+}
+
+.ProductItem img {
+  grid-area: image;
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: .1rem .1rem .3rem 0 rgba(0,0,0,0.37);
+}
+
+.ProductItem .name {
+  grid-area: name;
+  margin: 0;
+  font-size: 1.7rem;
+}
+
+.ProductItem .price {
+  grid-area: price;
+  justify-self: end;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.ProductItem .description {
+  grid-area: description;
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: justify;
+  font-style: italic;
+}
+
+.ProductItem button {
+  grid-area: button;
+  justify-self: end;
+  background: #444;
+  color: #fff;
+  margin-top: 1rem;
+  border: solid 1px #222;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.4rem;
+  padding: .8rem 1.5rem;
+}
