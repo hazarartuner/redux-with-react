@@ -13,34 +13,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none;
+}
+
 .App {
   font-size: 1.6rem;
   max-width: 92rem;
-  display: grid;
   margin: 10px auto 0 auto;
-  grid-template-areas: 'header header' 'products cart' 'footer footer';
-  grid-template-columns: 1fr .5fr;
   border-radius: 6px;
   border: solid 1px #f60000;
   overflow: hidden;
 }
 
 .App header {
-  grid-area: header;
   background: #f60000;
   text-align: center;
   padding: 20px 0;
+}
+
+.App header a {
   font-weight: 900;
   color: #fff;
   font-size: 2rem;
-}
-
-.App .products-section {
-  grid-area: products;
-}
-
-.App .cart-section {
-  grid-area: cart;
 }
 
 .App footer {

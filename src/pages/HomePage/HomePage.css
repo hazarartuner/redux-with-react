@@ -1,0 +1,13 @@
+.HomePage {
+  display: grid;
+  grid-template-areas: 'header cart' 'products cart';
+  grid-template-columns: 1fr .5fr;
+}
+
+.HomePage .products-section {
+  grid-area: products;
+}
+
+.HomePage .cart-section {
+  grid-area: cart;
+}

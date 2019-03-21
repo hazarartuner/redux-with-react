@@ -11,17 +11,27 @@
   padding-top: 2rem;
 }
 
-.ProductItem img {
+.ProductItem .image-link {
   grid-area: image;
   width: 100%;
+  display: block;
+  align-self: start;
   border-radius: 3px;
   box-shadow: .1rem .1rem .3rem 0 rgba(0,0,0,0.37);
+}
+
+.ProductItem .image-link img {
+  width: 100%;
 }
 
 .ProductItem .name {
   grid-area: name;
   margin: 0;
   font-size: 1.7rem;
+}
+
+.ProductItem .name a {
+  color: #000;
 }
 
 .ProductItem .price {

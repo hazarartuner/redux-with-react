@@ -16,7 +16,7 @@ const CategoryItem = props => {
 };
 
 CategoryItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string,
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 };

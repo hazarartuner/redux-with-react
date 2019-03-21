@@ -3,4 +3,5 @@
   padding: 20px;
   display: grid;
   grid-row-gap: 2rem;
+  box-sizing: border-box;
 }

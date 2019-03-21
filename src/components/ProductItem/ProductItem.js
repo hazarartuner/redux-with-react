@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { generatePath } from 'helpers/route';
 
 import './ProductItem.css';
 
@@ -10,9 +12,15 @@ const ProductItem = props => {
     onAddToCart && onAddToCart(id);
   }
 
+  const path = generatePath('productPage', { id });
+
   return <div className="ProductItem">
-    <img src={image} alt={name} />
-    <h2 className={'name'}>{name}</h2>
+    <Link className={'image-link'} to={path}>
+      <img src={image} alt={name} />
+    </Link>
+    <h2 className={'name'}>
+      <Link to={path}>{name}</Link>
+    </h2>
     <span className={'price'}>{price} TL</span>
     <p className={'description'}>{description}</p>
     <button onClick={handleOnAddToCartClick}>Sepete Ekle</button>

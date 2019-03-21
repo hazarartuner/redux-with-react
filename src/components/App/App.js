@@ -1,14 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import { Switch, Route } from 'react-router';
+import { Link } from 'react-router-dom';
 
-import Products from "components/Products";
-import ProductItem from "components/ProductItem";
-import Cart from "components/Cart";
-import CartItem from "components/CartItem";
-import Categories from "components/Categories";
-import CategoryItem from "components/CategoryItem";
+import { generatePath } from "helpers/route";
 
-import ProductsContainer from 'containers/ProductsContainer';
-import CartContainer from 'containers/CartContainer';
+import routes from 'config/routes';
 
 import './App.css';
 
@@ -16,38 +12,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>The Market App</header>
+        <header>
+          <Link to={generatePath('homePage')}>The Market App</Link>
+        </header>
 
-        <section className={'products-section'}>
-          <ProductsContainer>
-            {({ products, categories, onAddToCart, onCategoryChange }) => (
-              <Fragment>
-                <Categories>
-                  {categories.map(category =>
-                    <CategoryItem id={category.id} onClick={onCategoryChange}>{category.name}</CategoryItem>
-                  )}
-                </Categories>
-                <Products>
-                  {products.map(product =>
-                    <ProductItem key={product.id} product={product} onAddToCart={onAddToCart} />
-                  )}
-                </Products>
-              </Fragment>
-            )}
-          </ProductsContainer>
-        </section>
-
-        <section className="cart-section">
-          <CartContainer>
-            {({ cartItems, onRemoveFromCart }) => (
-              <Cart cartItems={cartItems}>
-                {cartItems.map(cartItem =>
-                  <CartItem key={cartItem.id} item={cartItem} onRemoveFromCart={onRemoveFromCart} />
-                )}
-              </Cart>
-            )}
-          </CartContainer>
-        </section>
+        <Switch>
+          {Object.keys(routes).map(key =>
+            <Route key={key} {...routes[key]} />
+          )}
+        </Switch>
 
         <footer>@ 2019</footer>
       </div>

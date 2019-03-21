@@ -2,6 +2,7 @@
   background: #efe7e6;
   min-height: calc(100%);
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .Cart h3 {
