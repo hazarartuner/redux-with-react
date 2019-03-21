@@ -1,5 +1,5 @@
 html {
-  font-size: 10px;
+  font-size: 62.5%;
   background: #f0f0f0;
 }
 
@@ -20,16 +20,16 @@ a {
 .App {
   font-size: 1.6rem;
   max-width: 92rem;
-  margin: 10px auto 0 auto;
-  border-radius: 6px;
-  border: solid 1px #f60000;
+  margin: 0 auto;
+  border-radius: 0.6rem;
+  border: solid .1rem #f60000;
   overflow: hidden;
 }
 
 .App header {
   background: #f60000;
   text-align: center;
-  padding: 20px 0;
+  padding: 1rem 0;
 }
 
 .App header a {
@@ -40,7 +40,7 @@ a {
 
 .App footer {
   grid-area: footer;
-  padding: 10px;
+  padding: 1rem;
   font-size: 1.2rem;
   color: #fff;
   background: #f60000;

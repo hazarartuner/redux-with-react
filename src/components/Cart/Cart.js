@@ -18,8 +18,7 @@ const Cart = ({ children, cartItems }) => {
           <p className="total-price">
             <strong>Toplam: </strong>
             {cartItems && cartItems.reduce((acc, curr) => {
-              acc += curr.price;
-              return acc;
+              return acc + curr.product.price * curr.count;
               }, 0)} TL
           </p>
           <button>Siparişi Tamamla</button>
@@ -33,7 +32,10 @@ const Cart = ({ children, cartItems }) => {
 Cart.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element),
   cartItems: PropTypes.arrayOf(PropTypes.shape({
-    price: PropTypes.number.isRequired,
+    product: PropTypes.shape({
+      price: PropTypes.number.isRequired,
+    }),
+    count: PropTypes.number.isRequired,
   }))
 };
 

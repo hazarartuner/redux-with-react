@@ -1,7 +1,7 @@
 .CartItem {
   display: grid;
-  grid-template-areas: 'image name button' 'image price button';
-  grid-template-columns: 60px 1fr auto;
+  grid-template-areas: 'image name price button' 'image count count button';
+  grid-template-columns: 6rem 1fr auto;
   grid-column-gap: 1rem;
   margin-bottom: 1.5rem;
   background: #fff;
@@ -14,7 +14,7 @@
   max-width: 100%;
 }
 
-.CartItem p {
+.CartItem p.name {
   grid-area: name;
   margin: 0;
   font-weight: bold;
@@ -22,9 +22,14 @@
   padding-top: 1rem;
 }
 
-.CartItem span {
+.CartItem span.price {
   grid-area: price;
-  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.CartItem span.count {
+  grid-area: count;
+  font-size: 1.4rem;
 }
 
 .CartItem button {

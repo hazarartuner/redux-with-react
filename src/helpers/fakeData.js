@@ -49,21 +49,27 @@ export const products = [
 
 export const cartItems = [
   {
-    id: 1,
-    name: '1 Kg Elma',
-    category: 'Meyve',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et quam eu metus venenatis fringilla. Curabitur lacinia tincidunt sem eu vulputate. Pellentesque euismod et purus eu laoreet.',
-    image: apple,
-    price: 5,
+    count: 1,
+    product: {
+      id: 1,
+      name: '1 Kg Elma',
+      category: 'Meyve',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et quam eu metus venenatis fringilla. Curabitur lacinia tincidunt sem eu vulputate. Pellentesque euismod et purus eu laoreet.',
+      image: apple,
+      price: 5,
+    }
   },
   {
-    id: 2,
-    name: '1 Kg Muz',
-    category: 'Meyve',
-    description: 'In nec imperdiet nunc. Nulla feugiat ligula eu lectus pulvinar facilisis. Curabitur posuere rhoncus magna, vitae vulputate felis. Cras et malesuada leo, at sodales massa.',
-    image: banana,
-    price: 10,
-  },
+    count: 1,
+    product: {
+      id: 2,
+      name: '1 Kg Muz',
+      category: 'Meyve',
+      description: 'In nec imperdiet nunc. Nulla feugiat ligula eu lectus pulvinar facilisis. Curabitur posuere rhoncus magna, vitae vulputate felis. Cras et malesuada leo, at sodales massa.',
+      image: banana,
+      price: 10,
+    }
+  }
 ];
 
 export const categories = [

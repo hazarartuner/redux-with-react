@@ -1,5 +1,5 @@
 .CategoryItem {
-  border-radius: 3px;
+  border-radius: .3rem;
   box-shadow: 0 0 .3rem 0 rgba(0,0,0,0.37);
   padding: .5rem 1rem;
   margin: 0 1rem 0 0;

@@ -7,8 +7,8 @@
 }
 
 .ProductItem + .ProductItem {
-  border-top: solid 1px #ddd;
-  padding-top: 2rem;
+  border-top: solid .1rem #ddd;
+  padding-top: 1.5rem;
 }
 
 .ProductItem .image-link {
@@ -16,7 +16,7 @@
   width: 100%;
   display: block;
   align-self: start;
-  border-radius: 3px;
+  border-radius: .3rem;
   box-shadow: .1rem .1rem .3rem 0 rgba(0,0,0,0.37);
 }
 
@@ -55,7 +55,7 @@
   background: #444;
   color: #fff;
   margin-top: 1rem;
-  border: solid 1px #222;
+  border: solid .1rem #222;
   font-weight: bold;
   cursor: pointer;
   font-size: 1.4rem;

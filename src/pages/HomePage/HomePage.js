@@ -38,10 +38,9 @@ class HomePage extends Component {
       <section className="cart-section">
         <CartContainer>
           {({ cartItems, onRemoveFromCart }) => (
-
             <Cart cartItems={cartItems}>
-              {cartItems.map(cartItem =>
-                <CartItem key={cartItem.id} item={cartItem} onRemoveFromCart={onRemoveFromCart} />
+              {cartItems.map(({ product, count}) =>
+                <CartItem key={product.id} product={product} count={count} onRemoveFromCart={onRemoveFromCart} />
               )}
             </Cart>
           )}
