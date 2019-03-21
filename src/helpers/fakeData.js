@@ -65,3 +65,18 @@ export const cartItems = [
     price: 10,
   },
 ];
+
+export const categories = [
+  {
+    id: null,
+    name: 'Tümü',
+  },
+  {
+    id: 'Meyve',
+    name: 'Meyve',
+  },
+  {
+    id: 'Oyuncak',
+    name: 'Oyuncak',
+  }
+];

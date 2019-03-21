@@ -7,7 +7,7 @@ const ProductItem = props => {
   const { product: { id, name, image, description, price }, onAddToCart } = props;
 
   function handleOnAddToCartClick() {
-    onAddToCart(id);
+    onAddToCart && onAddToCart(id);
   }
 
   return <div className="ProductItem">

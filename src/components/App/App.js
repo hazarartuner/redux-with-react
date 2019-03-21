@@ -5,6 +5,7 @@ import ProductItem from "components/ProductItem";
 import Cart from "components/Cart";
 import CartItem from "components/CartItem";
 import Categories from "components/Categories";
+import CategoryItem from "components/CategoryItem";
 
 import ProductsContainer from 'containers/ProductsContainer';
 import CartContainer from 'containers/CartContainer';
@@ -19,9 +20,13 @@ class App extends Component {
 
         <section className={'products-section'}>
           <ProductsContainer>
-            {({ products, categories, onAddToCart }) => (
+            {({ products, categories, onAddToCart, onCategoryChange }) => (
               <Fragment>
-                <Categories categories={categories} />
+                <Categories>
+                  {categories.map(category =>
+                    <CategoryItem id={category.id} onClick={onCategoryChange}>{category.name}</CategoryItem>
+                  )}
+                </Categories>
                 <Products>
                   {products.map(product =>
                     <ProductItem key={product.id} product={product} onAddToCart={onAddToCart} />

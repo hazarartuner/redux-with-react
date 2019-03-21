@@ -3,20 +3,15 @@ import PropTypes from 'prop-types';
 
 import './Categories.css';
 
-const Categories = ({ categories }) => {
+const Categories = ({ children }) => {
   return <div className={'Categories'}>
     <strong>KATEGORİLER:</strong>
-    <span>Tümü</span>
-    {categories.map(category => <span key={category}>{category}</span>) }
+    {children}
   </div>
 };
 
 Categories.propTypes = {
-  categories: PropTypes.array,
-};
-
-Categories.defaultProps = {
-  categories: [],
+  children: PropTypes.arrayOf(PropTypes.element),
 };
 
 export default Categories;

@@ -8,13 +8,3 @@
 .Categories strong {
   margin-right: 1rem;
 }
-
-.Categories span {
-  border-radius: 3px;
-  box-shadow: 0 0 .3rem 0 rgba(0,0,0,0.37);
-  padding: .5rem 1rem;
-  margin: 0 1rem 0 0;
-  background: #f0f0f0;
-  display: inline-block;
-  cursor: pointer;
-}

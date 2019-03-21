@@ -7,7 +7,7 @@ const CartItem = props => {
   const { item: { id, name, image, price }, onRemoveFromCart } = props;
 
   function handleOnRemoveButtonClick() {
-    onRemoveFromCart(id);
+    onRemoveFromCart && onRemoveFromCart(id);
   }
 
   return <div className="CartItem">
