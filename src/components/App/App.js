@@ -40,7 +40,7 @@ class App extends Component {
         <section className="cart-section">
           <CartContainer>
             {({ cartItems, onRemoveFromCart }) => (
-              <Cart>
+              <Cart cartItems={cartItems}>
                 {cartItems.map(cartItem =>
                   <CartItem key={cartItem.id} item={cartItem} onRemoveFromCart={onRemoveFromCart} />
                 )}
