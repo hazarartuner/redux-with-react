@@ -1,10 +1,10 @@
-import fakeProducts from 'helpers/fakeProducts';
+import fakeData from 'helpers/fakeProducts';
 
 class Api {
   fetchProducts(category) {
     return new Promise(
       resolve => {
-        const products = fakeProducts.reduce((acc, curr) => {
+        const products = fakeData.reduce((acc, curr) => {
           if (!category || curr.category === category) {
             acc.push(curr);
           }

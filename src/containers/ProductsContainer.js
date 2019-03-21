@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import api from 'helpers/api';
+import { products } from 'helpers/fakeData';
 
 class ProductsContainer extends Component
 {
@@ -10,18 +10,9 @@ class ProductsContainer extends Component
   };
 
   state = {
-    products: [],
+    products: products,
     categories: ['Meyve', 'Hediye']
   };
-
-  componentDidMount() {
-    api.fetchProducts()
-      .then(({ products }) => {
-        this.setState({
-          products
-        });
-      });
-  }
 
   handleOnAddToCart = id => {
     alert(`ID numarası "${id}" olan ürünü sepete ekle`);

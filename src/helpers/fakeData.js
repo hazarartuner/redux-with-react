@@ -4,7 +4,7 @@ import orange from 'assets/images/orange.jpg';
 import car from 'assets/images/car.jpg';
 import teddyBear from 'assets/images/teddy-bear.jpg';
 
-const fakeProducts = [
+export const products = [
   {
     id: 1,
     name: '1 Kg Elma',
@@ -47,4 +47,21 @@ const fakeProducts = [
   },
 ];
 
-export default fakeProducts;
+export const cartItems = [
+  {
+    id: 1,
+    name: '1 Kg Elma',
+    category: 'Meyve',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et quam eu metus venenatis fringilla. Curabitur lacinia tincidunt sem eu vulputate. Pellentesque euismod et purus eu laoreet.',
+    image: apple,
+    price: 5,
+  },
+  {
+    id: 2,
+    name: '1 Kg Muz',
+    category: 'Meyve',
+    description: 'In nec imperdiet nunc. Nulla feugiat ligula eu lectus pulvinar facilisis. Curabitur posuere rhoncus magna, vitae vulputate felis. Cras et malesuada leo, at sodales massa.',
+    image: banana,
+    price: 10,
+  },
+];

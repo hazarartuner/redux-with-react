@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// import api from 'helpers/api';
+import { cartItems } from 'helpers/fakeData';
 
 class CartContainer extends Component
 {
@@ -10,17 +10,8 @@ class CartContainer extends Component
   };
 
   state = {
-    cartItems: [],
+    cartItems: cartItems,
   };
-
-  // componentDidMount() {
-  //   api.fetchProducts()
-  //     .then(({ products: cartItems }) => {
-  //       this.setState({
-  //         cartItems: cartItems.slice(0, 2),
-  //       });
-  //     })
-  // }
 
   handleOnRemoveFromCart = id => {
     alert(`ID numarası "${id}" olan ürünü sepetten kaldır`);
