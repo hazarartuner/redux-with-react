@@ -13,7 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <Link to={generatePath('homePage')}>The Market App</Link>
+          <Link to={generatePath('homePage')}>The Market</Link>
         </header>
 
         <Switch>
@@ -22,7 +22,7 @@ class App extends Component {
           )}
         </Switch>
 
-        <footer>@ 2019</footer>
+        <footer>@2019</footer>
       </div>
     );
   }
