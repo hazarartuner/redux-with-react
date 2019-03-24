@@ -6,7 +6,7 @@ import teddyBear from "assets/images/teddy-bear.jpg";
 
 export const products = [
   {
-    id: 1,
+    id: "1",
     name: "1 Kg Elma",
     category: "Meyve",
     description:
@@ -15,7 +15,7 @@ export const products = [
     price: 5
   },
   {
-    id: 2,
+    id: "2",
     name: "1 Kg Muz",
     category: "Meyve",
     description:
@@ -24,7 +24,7 @@ export const products = [
     price: 10
   },
   {
-    id: 3,
+    id: "3",
     name: "1 Kg Portakal",
     category: "Meyve",
     description:
@@ -33,7 +33,7 @@ export const products = [
     price: 6
   },
   {
-    id: 4,
+    id: "4",
     name: "Oyuncak Araba",
     category: "Hediye",
     description:
@@ -42,7 +42,7 @@ export const products = [
     price: 20
   },
   {
-    id: 5,
+    id: "5",
     name: "Teddy Ayıcık",
     category: "Hediye",
     description:
@@ -56,7 +56,7 @@ export const cartItems = [
   {
     count: 1,
     product: {
-      id: 1,
+      id: "1",
       name: "1 Kg Elma",
       category: "Meyve",
       description:
@@ -68,7 +68,7 @@ export const cartItems = [
   {
     count: 1,
     product: {
-      id: 2,
+      id: "2",
       name: "1 Kg Muz",
       category: "Meyve",
       description:
