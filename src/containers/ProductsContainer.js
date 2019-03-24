@@ -9,6 +9,8 @@ import {
   addToCart
 } from "redux/actions";
 
+import { productsSelector } from "redux/selectors";
+
 class ProductsContainer extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired
@@ -52,10 +54,7 @@ class ProductsContainer extends Component {
 const mapStateToProps = state => ({
   categories: state.categories,
   selectedCategory: state.selectedCategory,
-  products: Object.values(state.products).filter(
-    product =>
-      !state.selectedCategory || product.category === state.selectedCategory
-  )
+  products: productsSelector(state)
 });
 
 const mapDispatchToProps = {

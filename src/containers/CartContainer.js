@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 
 import { removeFromCart } from "redux/actions";
 
+import { cartSelector } from "redux/selectors";
+
 class CartContainer extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired
@@ -26,10 +28,7 @@ class CartContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  cartItems: Object.values(state.cart).map(cartItem => ({
-    count: cartItem.count,
-    product: state.products[cartItem.product]
-  }))
+  cartItems: cartSelector(state)
 });
 
 const mapDispatchToProps = {
