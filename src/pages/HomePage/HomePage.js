@@ -18,14 +18,20 @@ class HomePage extends Component {
       <div className="HomePage">
         <section className={"products-section"}>
           <ProductsContainer>
-            {({ products, categories, onAddToCart, onCategoryChange }) => (
+            {({
+              products,
+              categories,
+              selectedCategory,
+              onAddToCart,
+              onCategoryChange
+            }) => (
               <Fragment>
                 <Categories>
                   {categories.map(category => (
                     <CategoryItem
                       key={category.id}
                       id={category.id}
-                      active={category.id === null}
+                      active={category.id === selectedCategory}
                       onClick={onCategoryChange}
                     >
                       {category.name}

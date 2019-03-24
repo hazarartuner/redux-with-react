@@ -10,7 +10,8 @@ class ProductsContainer extends Component {
 
   state = {
     products,
-    categories
+    categories,
+    selectedCategory: null
   };
 
   handleOnAddToCart = id => {
@@ -23,13 +24,14 @@ class ProductsContainer extends Component {
 
   render() {
     const { children } = this.props;
-    const { products, categories } = this.state;
+    const { products, categories, selectedCategory } = this.state;
 
     return (
       children &&
       children({
         products,
         categories,
+        selectedCategory,
         onAddToCart: this.handleOnAddToCart,
         onCategoryChange: this.handleOnCategoryChange
       })
