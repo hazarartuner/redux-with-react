@@ -5,6 +5,8 @@ import { withRouter } from "react-router";
 
 import { loadProduct, addToCart } from "redux/actions";
 
+import { selectedProductSelector } from "redux/selectors";
+
 class ProductContainer extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired
@@ -36,7 +38,7 @@ class ProductContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  product: state.products[state.selectedProduct]
+  product: selectedProductSelector(state)
 });
 
 const mapDispatchToProps = {
