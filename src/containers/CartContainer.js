@@ -1,16 +1,15 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from "react";
+import PropTypes from "prop-types";
 
-import { cartItems } from 'helpers/fakeData';
+import { cartItems } from "helpers/fakeData";
 
-class CartContainer extends Component
-{
+class CartContainer extends Component {
   static propTypes = {
-    children: PropTypes.func.isRequired,
+    children: PropTypes.func.isRequired
   };
 
   state = {
-    cartItems: cartItems,
+    cartItems: cartItems
   };
 
   handleOnRemoveFromCart = id => {
@@ -21,7 +20,10 @@ class CartContainer extends Component
     const { children } = this.props;
     const { cartItems } = this.state;
 
-    return children && children({ cartItems, onRemoveFromCart: this.handleOnRemoveFromCart });
+    return (
+      children &&
+      children({ cartItems, onRemoveFromCart: this.handleOnRemoveFromCart })
+    );
   }
 }
 

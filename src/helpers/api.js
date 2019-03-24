@@ -1,20 +1,18 @@
-import fakeData from 'helpers/fakeProducts';
+import fakeData from "helpers/fakeProducts";
 
 class Api {
   fetchProducts(category) {
-    return new Promise(
-      resolve => {
-        const products = fakeData.reduce((acc, curr) => {
-          if (!category || curr.category === category) {
-            acc.push(curr);
-          }
+    return new Promise(resolve => {
+      const products = fakeData.reduce((acc, curr) => {
+        if (!category || curr.category === category) {
+          acc.push(curr);
+        }
 
-          return acc;
-        }, []);
+        return acc;
+      }, []);
 
-        setTimeout(() => resolve({ products}), 300);
-      }
-    )
+      setTimeout(() => resolve({ products }), 300);
+    });
   }
 }
 

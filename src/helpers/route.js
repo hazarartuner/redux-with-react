@@ -1,6 +1,6 @@
-import { generatePath as _generatePath } from 'react-router';
+import { generatePath as _generatePath } from "react-router";
 
-import routes from 'config/routes';
+import routes from "config/routes";
 
 export function generatePath(routeName, params) {
   const path = routes[routeName] && routes[routeName].path;

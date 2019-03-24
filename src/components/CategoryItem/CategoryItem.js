@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import './CategoryItem.css';
+import "./CategoryItem.css";
 
 const CategoryItem = props => {
   const { id, children, onClick } = props;
@@ -10,15 +10,17 @@ const CategoryItem = props => {
     onClick && onClick(id);
   }
 
-  return <span className="CategoryItem" onClick={handleOnClick}>
-    {children}
-  </span>
+  return (
+    <span className="CategoryItem" onClick={handleOnClick}>
+      {children}
+    </span>
+  );
 };
 
 CategoryItem.propTypes = {
   id: PropTypes.string,
   children: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 export default CategoryItem;

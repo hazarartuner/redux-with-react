@@ -1,21 +1,21 @@
-import HomePage from 'pages/HomePage';
-import ProductPage from 'pages/ProductPage';
-import NotFoundPage from 'pages/NotFoundPage';
+import HomePage from "pages/HomePage";
+import ProductPage from "pages/ProductPage";
+import NotFoundPage from "pages/NotFoundPage";
 
 const routes = {
   homePage: {
-    path: '/',
+    path: "/",
     component: HomePage,
-    exact: true,
+    exact: true
   },
   productPage: {
-    path: '/urun/:id',
-    component: ProductPage,
+    path: "/urun/:id",
+    component: ProductPage
   },
   notFoundPage: {
-    path: '**',
-    component: NotFoundPage,
-  },
+    path: "**",
+    component: NotFoundPage
+  }
 };
 
 export default routes;

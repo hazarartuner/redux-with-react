@@ -1,17 +1,16 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from "react";
+import PropTypes from "prop-types";
 
-import { products, categories } from 'helpers/fakeData';
+import { products, categories } from "helpers/fakeData";
 
-class ProductsContainer extends Component
-{
+class ProductsContainer extends Component {
   static propTypes = {
-    children: PropTypes.func.isRequired,
+    children: PropTypes.func.isRequired
   };
 
   state = {
     products,
-    categories,
+    categories
   };
 
   handleOnAddToCart = id => {
@@ -26,12 +25,15 @@ class ProductsContainer extends Component
     const { children } = this.props;
     const { products, categories } = this.state;
 
-    return children && children({
-      products,
-      categories,
-      onAddToCart: this.handleOnAddToCart,
-      onCategoryChange: this.handleOnCategoryChange,
-    });
+    return (
+      children &&
+      children({
+        products,
+        categories,
+        onAddToCart: this.handleOnAddToCart,
+        onCategoryChange: this.handleOnCategoryChange
+      })
+    );
   }
 }
 

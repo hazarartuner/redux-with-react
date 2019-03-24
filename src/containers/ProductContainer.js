@@ -1,21 +1,20 @@
-import { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from "react";
+import PropTypes from "prop-types";
 
-import { products } from 'helpers/fakeData';
+import { products } from "helpers/fakeData";
 
-class ProductContainer extends Component
-{
+class ProductContainer extends Component {
   static propTypes = {
-    children: PropTypes.func.isRequired,
+    children: PropTypes.func.isRequired
   };
 
   state = {
-    product: {},
+    product: {}
   };
 
   componentDidMount() {
     this.setState({
-      product: products[0],
+      product: products[0]
     });
   }
 
@@ -27,11 +26,13 @@ class ProductContainer extends Component
     const { children } = this.props;
     const { product } = this.state;
 
-
-    return children && children({
-      product,
-      onAddToCart: this.handleOnAddToCart,
-    });
+    return (
+      children &&
+      children({
+        product,
+        onAddToCart: this.handleOnAddToCart
+      })
+    );
   }
 }
 
