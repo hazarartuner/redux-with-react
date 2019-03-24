@@ -7,3 +7,8 @@
   display: inline-block;
   cursor: pointer;
 }
+
+.CategoryItem.active {
+  background: #444;
+  color: #fff;
+}

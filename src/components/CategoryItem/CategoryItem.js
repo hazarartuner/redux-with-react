@@ -11,7 +11,10 @@ const CategoryItem = props => {
   }
 
   return (
-    <span className="CategoryItem" onClick={handleOnClick}>
+    <span
+      className={`CategoryItem ${props.active && "active"}`}
+      onClick={handleOnClick}
+    >
       {children}
     </span>
   );
@@ -19,6 +22,7 @@ const CategoryItem = props => {
 
 CategoryItem.propTypes = {
   id: PropTypes.string,
+  active: PropTypes.bool,
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func
 };

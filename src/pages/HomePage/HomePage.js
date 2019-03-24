@@ -25,6 +25,7 @@ class HomePage extends Component {
                     <CategoryItem
                       key={category.id}
                       id={category.id}
+                      active={category.id === null}
                       onClick={onCategoryChange}
                     >
                       {category.name}
