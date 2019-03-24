@@ -1,3 +1,5 @@
+import api from "helpers/api";
+
 export const Types = {
   PRODUCT_SET_ALL: "PRODUCT_SET_ALL",
   PRODUCT_SET_ONE: "PRODUCT_SET_ONE",
@@ -7,38 +9,38 @@ export const Types = {
   CART_REMOVE_PRODUCT: "CART_REMOVE_PRODUCT"
 };
 
-export function loadAllProducts() {
-  const { products } = require("helpers/fakeData");
+export const loadAllProducts = () => dispatch => {
+  api.fetchProducts().then(response => {
+    dispatch({
+      type: Types.PRODUCT_SET_ALL,
+      payload: {
+        products: response.products
+      }
+    });
+  });
+};
 
-  return {
-    type: Types.PRODUCT_SET_ALL,
-    payload: {
-      products
-    }
-  };
-}
+export const loadProduct = productId => dispatch => {
+  api.fetchProduct(productId).then(response =>
+    dispatch({
+      type: Types.PRODUCT_SET_ONE,
+      payload: {
+        product: response.product
+      }
+    })
+  );
+};
 
-export function loadProduct(productId) {
-  const { products } = require("helpers/fakeData");
-
-  return {
-    type: Types.PRODUCT_SET_ONE,
-    payload: {
-      product: products.find(product => product.id === productId)
-    }
-  };
-}
-
-export function loadAllCategories() {
-  const { categories } = require("helpers/fakeData");
-
-  return {
-    type: Types.CATEGORY_SET_ALL,
-    payload: {
-      categories
-    }
-  };
-}
+export const loadAllCategories = () => dispatch => {
+  api.fetchCategories().then(response =>
+    dispatch({
+      type: Types.CATEGORY_SET_ALL,
+      payload: {
+        categories: response.categories
+      }
+    })
+  );
+};
 
 export function setActiveCategory(categoryId) {
   return {
