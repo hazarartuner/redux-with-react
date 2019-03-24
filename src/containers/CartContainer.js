@@ -1,24 +1,22 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
-import { cartItems } from "helpers/fakeData";
+import { removeFromCart } from "redux/actions";
 
 class CartContainer extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired
   };
 
-  state = {
-    cartItems: cartItems
-  };
-
   handleOnRemoveFromCart = id => {
-    alert(`ID numarası "${id}" olan ürünü sepetten kaldır`);
+    const { removeFromCart } = this.props;
+
+    removeFromCart && removeFromCart(id);
   };
 
   render() {
-    const { children } = this.props;
-    const { cartItems } = this.state;
+    const { children, cartItems } = this.props;
 
     return (
       children &&
@@ -27,4 +25,18 @@ class CartContainer extends Component {
   }
 }
 
-export default CartContainer;
+const mapStateToProps = state => ({
+  cartItems: Object.values(state.cart).map(cartItem => ({
+    count: cartItem.count,
+    product: state.products[cartItem.product]
+  }))
+});
+
+const mapDispatchToProps = {
+  removeFromCart
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(CartContainer);
