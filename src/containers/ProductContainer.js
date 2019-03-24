@@ -9,7 +9,7 @@ class ProductContainer extends Component {
   };
 
   state = {
-    product: {}
+    product: null
   };
 
   componentDidMount() {

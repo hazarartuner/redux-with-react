@@ -16,7 +16,7 @@ class ProductPage extends Component {
         <section className="product-section">
           <ProductContainer>
             {({ product, onAddToCart }) =>
-              !product.id ? null : (
+              !product ? null : (
                 <ProductItem product={product} onAddToCart={onAddToCart} />
               )
             }
