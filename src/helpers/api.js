@@ -1,4 +1,4 @@
-import fakeData from "helpers/fakeProducts";
+import fakeData from "helpers/fakeData";
 
 class Api {
   fetchProducts(category) {
