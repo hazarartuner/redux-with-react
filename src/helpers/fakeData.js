@@ -82,7 +82,7 @@ export const categories = [
     name: 'Meyve',
   },
   {
-    id: 'Oyuncak',
-    name: 'Oyuncak',
+    id: 'Hediye',
+    name: 'Hediye',
   }
 ];
