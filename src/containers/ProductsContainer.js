@@ -9,7 +9,11 @@ import {
   addToCart
 } from "redux/actions";
 
-import { productsSelector } from "redux/selectors";
+import {
+  productsSelector,
+  categoriesSelector,
+  selectedCategorySelector
+} from "redux/selectors";
 
 class ProductsContainer extends Component {
   static propTypes = {
@@ -52,8 +56,8 @@ class ProductsContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  categories: state.categories,
-  selectedCategory: state.selectedCategory,
+  categories: categoriesSelector(state),
+  selectedCategory: selectedCategorySelector(state),
   products: productsSelector(state)
 });
 
