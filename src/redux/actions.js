@@ -10,7 +10,7 @@ export const Types = {
 };
 
 export const loadAllProducts = () => dispatch => {
-  api.fetchProducts().then(response => {
+  return api.fetchProducts().then(response => {
     dispatch({
       type: Types.PRODUCT_SET_ALL,
       payload: {
@@ -21,7 +21,7 @@ export const loadAllProducts = () => dispatch => {
 };
 
 export const loadProduct = productId => dispatch => {
-  api.fetchProduct(productId).then(response =>
+  return api.fetchProduct(productId).then(response =>
     dispatch({
       type: Types.PRODUCT_SET_ONE,
       payload: {
@@ -32,7 +32,7 @@ export const loadProduct = productId => dispatch => {
 };
 
 export const loadAllCategories = () => dispatch => {
-  api.fetchCategories().then(response =>
+  return api.fetchCategories().then(response =>
     dispatch({
       type: Types.CATEGORY_SET_ALL,
       payload: {
