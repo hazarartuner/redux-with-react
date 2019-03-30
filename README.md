@@ -1,10 +1,10 @@
 ### Clone repository
 ```bash
-git clone git@github.com:hazarartuner/redux-with-vanilla-js.git
+git clone git@github.com:hazarartuner/redux-with-react.git
 ```
 
 ```bash
-cd redux-with-vanilla-js
+cd redux-with-react
 ```
 
 ### Initialize packages
