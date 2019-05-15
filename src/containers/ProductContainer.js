@@ -1,30 +1,31 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
 
-import { products } from "helpers/fakeData";
+import { loadProduct, addToCart } from "redux/actions";
+
+import { selectedProductSelector } from "redux/selectors";
 
 class ProductContainer extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired
   };
 
-  state = {
-    product: null
-  };
-
   componentDidMount() {
-    this.setState({
-      product: products[0]
-    });
+    const { loadProduct, match } = this.props;
+
+    loadProduct && loadProduct(match.params.id);
   }
 
   handleOnAddToCart = id => {
-    alert(`ID numarası "${id}" olan ürünü sepete ekle`);
+    const { addToCart } = this.props;
+
+    addToCart && addToCart(id);
   };
 
   render() {
-    const { children } = this.props;
-    const { product } = this.state;
+    const { children, product = null } = this.props;
 
     return (
       children &&
@@ -36,4 +37,16 @@ class ProductContainer extends Component {
   }
 }
 
-export default ProductContainer;
+const mapStateToProps = state => ({
+  product: selectedProductSelector(state)
+});
+
+const mapDispatchToProps = {
+  loadProduct,
+  addToCart
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(ProductContainer));
